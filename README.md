@@ -46,6 +46,15 @@ Deployment targets describe build compatibility, not a guarantee of finger-tap a
 
 ### 1. Build and install
 
+First check that your command-line tools use full Xcode:
+
+```sh
+xcodebuild -version
+xcrun --sdk watchos --show-sdk-version
+```
+
+Both commands must succeed. If they report that Xcode or the watchOS SDK is missing, install the required Xcode platform support and select Xcode in **Xcode → Settings → Locations → Command Line Tools**. The standalone Command Line Tools package is not enough to build these apps.
+
 The **recommended route is Xcode for both apps**. The release includes source and a Mac developer binary; it does not include a generally installable Watch binary, App Store/TestFlight distribution, or a notarized Mac installer.
 
 ```sh
@@ -54,14 +63,31 @@ cd Apple-Watch-Cursor
 open AppleWatchCursor.xcodeproj
 ```
 
-1. In Xcode, choose **AppleWatchCursorMac → My Mac**. Build and run. Allow Bluetooth when prompted.
-2. Choose the **AppleWatchCursorWatch** target and open **Signing & Capabilities**. Select your development team and automatic signing. If Xcode cannot register the existing identifiers, choose your own unique bundle identifiers for both targets.
-3. Choose your **physical Apple Watch** as the run destination. Keep it awake and unlocked. Connect its paired iPhone to the Mac if Xcode needs it for device discovery, enable Developer Mode when requested, then build and run.
-4. Allow Watch motion and Bluetooth permissions when prompted. A simulator cannot verify finger taps or real wrist control.
+1. Add your Apple account in **Xcode → Settings → Apple Accounts**. Select the blue project in the navigator, then select each app under **Targets** and open **Signing & Capabilities**.
+2. For a **new installation**, give both targets your own unique bundle identifiers, for example `dev.YOUR_UNIQUE_NAME.applewatchcursor.mac` and `dev.YOUR_UNIQUE_NAME.applewatchcursor.watch` with `YOUR_UNIQUE_NAME` replaced. Select your development team and **Automatically manage signing** for both targets. The checked-in identifiers belong to the original prototype; existing users upgrading their own installation can keep them. See [Apple's signing setup](https://developer.apple.com/documentation/xcode/running-your-app-on-simulated-or-physical-devices).
+3. Choose **AppleWatchCursorMac → My Mac** in the scheme/destination selector and press **Run (⌘R)**. Allow Bluetooth when prompted.
+4. Switch to **AppleWatchCursorWatch → your physical Apple Watch**. Keep the Watch awake and unlocked. Connect its paired iPhone to the Mac if Xcode needs it for discovery, complete device pairing and enable Developer Mode when requested, then press **Run (⌘R)**. Resolve signing/device errors in Xcode before continuing.
+5. Allow Watch motion and Bluetooth permissions when prompted. A simulator cannot verify finger taps or real wrist control.
 
 The Xcode project is checked in; XcodeGen is optional unless you edit `project.yml`. See [development and packaging](docs/DEVELOPMENT.md) for command-line builds and identifier configuration.
 
 **Mac download option:** the [preview release](https://github.com/intelc/Apple-Watch-Cursor/releases) has an ad hoc signed, unnotarized universal Mac ZIP. Extract it and move the app to Applications. macOS may block a downloaded developer build; building locally through Xcode is the supported first-run path. If you choose to allow the downloaded build, follow [Apple’s guidance for opening an app from an unidentified developer](https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unknown-developer-mh40616/mac). This Mac download still needs the Watch app built with your own signing.
+
+### Build-only test · no Watch or signing required
+
+To check the source before configuring an Apple account or connecting hardware, run these commands from the cloned repository. Full Xcode and its watchOS SDK are still required; XcodeGen and third-party package installation are not.
+
+```sh
+swift test
+xcodebuild -project AppleWatchCursor.xcodeproj -scheme AppleWatchCursorMac \
+  -destination 'platform=macOS' -derivedDataPath /tmp/apple-watch-cursor-mac \
+  CODE_SIGNING_ALLOWED=NO build
+xcodebuild -project AppleWatchCursor.xcodeproj -scheme AppleWatchCursorWatch \
+  -destination 'generic/platform=watchOS' -derivedDataPath /tmp/apple-watch-cursor-watch \
+  CODE_SIGNING_ALLOWED=NO build
+```
+
+Expected results: **70 tests, 0 failures**, then **BUILD SUCCEEDED** for each app. These commands compile both apps but do not install or launch them. Return to the signed Xcode steps above for device testing. See the [clean-checkout verification record](docs/BUILD-VALIDATION.md).
 
 ### 2. Connect once
 
