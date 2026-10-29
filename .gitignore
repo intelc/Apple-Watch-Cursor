@@ -1,0 +1,22 @@
+.build/
+.swiftpm/
+build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+.DS_Store
+*.xcarchive
+diagnostics/
+
+# Never commit device provisioning, signing material, or private recordings.
+*.mobileprovision
+*.provisionprofile
+*.p12
+*.p8
+*.pem
+*.key
+*.cer
+*.crt
+.env
+.env.*
+recordings/

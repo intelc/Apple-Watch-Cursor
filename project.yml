@@ -1,0 +1,68 @@
+name: AppleWatchCursor
+options:
+  bundleIdPrefix: dev.yiheng.wristpilot
+  deploymentTarget:
+    macOS: "14.0"
+    watchOS: "10.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MARKETING_VERSION: "0.6.0"
+    CURRENT_PROJECT_VERSION: 14
+    CODE_SIGN_STYLE: Automatic
+packages:
+  AppleWatchCursorCore:
+    path: .
+targets:
+  AppleWatchCursorMac:
+    type: application
+    platform: macOS
+    sources: [Mac]
+    dependencies:
+      - package: AppleWatchCursorCore
+    info:
+      path: Config/Mac-Info.plist
+      properties:
+        CFBundleDisplayName: Apple-Watch-Cursor
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
+        NSBluetoothAlwaysUsageDescription: Connect to your Apple Watch to receive wrist movements and finger taps.
+        NSBluetoothPeripheralUsageDescription: Connect to your Apple Watch for local cursor control.
+        NSHighResolutionCapable: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: dev.yiheng.wristpilot.mac
+        PRODUCT_NAME: Apple-Watch-Cursor
+        ENABLE_APP_SANDBOX: NO
+        COMBINE_HIDPI_IMAGES: YES
+  AppleWatchCursorWatch:
+    type: application
+    platform: watchOS
+    sources: [Watch]
+    dependencies:
+      - package: AppleWatchCursorCore
+    info:
+      path: Config/Watch-Info.plist
+      properties:
+        CFBundleDisplayName: Apple-Watch-Cursor
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
+        WKApplication: true
+        WKWatchOnly: true
+        NSMotionUsageDescription: Read wrist movement and learn the vibration of your finger-to-thumb tap for cursor control.
+        NSBluetoothAlwaysUsageDescription: Connect directly to Apple-Watch-Cursor on your Mac.
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: dev.yiheng.wristpilot.watch
+        TARGETED_DEVICE_FAMILY: 4
+        SKIP_INSTALL: NO
+schemes:
+  AppleWatchCursorMac:
+    build:
+      targets:
+        AppleWatchCursorMac: all
+  AppleWatchCursorWatch:
+    build:
+      targets:
+        AppleWatchCursorWatch: all

@@ -1,0 +1,450 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07E39B6B43BF0EE931D593E5 /* MacPilotModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAABEDBE9B69A67A8B014B1 /* MacPilotModel.swift */; };
+		216FD149657079CEB1B21F66 /* AxisCalibrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B5A9002E847A915D143B46 /* AxisCalibrationView.swift */; };
+		29B421EE15B3857290083E99 /* AppleWatchCursorMacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A795CACB6D6E8FC4C9C2A8 /* AppleWatchCursorMacApp.swift */; };
+		5008BAE747E0029CC9EAC604 /* WatchLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A9A37DC6E2DCB4B5C9FE94 /* WatchLink.swift */; };
+		6950D94761952A767324403C /* MacContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFB0CC24454C0A54E8C610B /* MacContentView.swift */; };
+		6E40A5F6FBE14ADA73349E2D /* WatchContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D156A58000FE9A6EBF01F9DA /* WatchContentView.swift */; };
+		79840C898667096014BDB621 /* PointerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A384D95C662F952C67BB1611 /* PointerController.swift */; };
+		9BCD44B9503DA9DD67FABD00 /* WatchPilotModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CB192749D37F1249DFE190 /* WatchPilotModel.swift */; };
+		A432C2DA3F605D89EB8B12B3 /* AppleWatchCursorCore in Frameworks */ = {isa = PBXBuildFile; productRef = 5FED62A680945B16DFC8C02C /* AppleWatchCursorCore */; };
+		DF540659CBF1954464804E57 /* AppleWatchCursorWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6862FFF7C85489BB065B337 /* AppleWatchCursorWatchApp.swift */; };
+		E1DFBD31C42BF6F15483714F /* AppleWatchCursorCore in Frameworks */ = {isa = PBXBuildFile; productRef = 19C9095493C74549CB02E041 /* AppleWatchCursorCore */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		31A795CACB6D6E8FC4C9C2A8 /* AppleWatchCursorMacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleWatchCursorMacApp.swift; sourceTree = "<group>"; };
+		31CB192749D37F1249DFE190 /* WatchPilotModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchPilotModel.swift; sourceTree = "<group>"; };
+		35A9A37DC6E2DCB4B5C9FE94 /* WatchLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchLink.swift; sourceTree = "<group>"; };
+		4F88DA2E0A9AFCA0BE536BFD /* AppleWatchCursorMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleWatchCursorMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A384D95C662F952C67BB1611 /* PointerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointerController.swift; sourceTree = "<group>"; };
+		B6B5A9002E847A915D143B46 /* AxisCalibrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AxisCalibrationView.swift; sourceTree = "<group>"; };
+		C6862FFF7C85489BB065B337 /* AppleWatchCursorWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleWatchCursorWatchApp.swift; sourceTree = "<group>"; };
+		CFFE75BC7A01B000BF0E236C /* AppleWatchCursorWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleWatchCursorWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D156A58000FE9A6EBF01F9DA /* WatchContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchContentView.swift; sourceTree = "<group>"; };
+		ECFB0CC24454C0A54E8C610B /* MacContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacContentView.swift; sourceTree = "<group>"; };
+		FCAABEDBE9B69A67A8B014B1 /* MacPilotModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacPilotModel.swift; sourceTree = "<group>"; };
+		FD2419E8FAA43DC6CC2E582D /* Apple-Watch-Cursor */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Apple-Watch-Cursor"; path = .; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		30B4D9149F68C09AA9F94F07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1DFBD31C42BF6F15483714F /* AppleWatchCursorCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAFD7AD32FD82D5C34E3E74B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A432C2DA3F605D89EB8B12B3 /* AppleWatchCursorCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6EA89068CF761B414CCAEC0F /* Watch */ = {
+			isa = PBXGroup;
+			children = (
+				C6862FFF7C85489BB065B337 /* AppleWatchCursorWatchApp.swift */,
+				D156A58000FE9A6EBF01F9DA /* WatchContentView.swift */,
+				35A9A37DC6E2DCB4B5C9FE94 /* WatchLink.swift */,
+				31CB192749D37F1249DFE190 /* WatchPilotModel.swift */,
+			);
+			path = Watch;
+			sourceTree = "<group>";
+		};
+		84B57C3B5828049F31C06EF9 = {
+			isa = PBXGroup;
+			children = (
+				B878F43A478D1BE3E8D72B79 /* Mac */,
+				ABF3BED477746F53074FAF2F /* Packages */,
+				6EA89068CF761B414CCAEC0F /* Watch */,
+				F941F4E13EC187EF5F92A053 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ABF3BED477746F53074FAF2F /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				FD2419E8FAA43DC6CC2E582D /* Apple-Watch-Cursor */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		B878F43A478D1BE3E8D72B79 /* Mac */ = {
+			isa = PBXGroup;
+			children = (
+				31A795CACB6D6E8FC4C9C2A8 /* AppleWatchCursorMacApp.swift */,
+				B6B5A9002E847A915D143B46 /* AxisCalibrationView.swift */,
+				ECFB0CC24454C0A54E8C610B /* MacContentView.swift */,
+				FCAABEDBE9B69A67A8B014B1 /* MacPilotModel.swift */,
+				A384D95C662F952C67BB1611 /* PointerController.swift */,
+			);
+			path = Mac;
+			sourceTree = "<group>";
+		};
+		F941F4E13EC187EF5F92A053 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4F88DA2E0A9AFCA0BE536BFD /* AppleWatchCursorMac.app */,
+				CFFE75BC7A01B000BF0E236C /* AppleWatchCursorWatch.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3123029925EF440705172C10 /* AppleWatchCursorWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E73C7D57FB96F092BE99B327 /* Build configuration list for PBXNativeTarget "AppleWatchCursorWatch" */;
+			buildPhases = (
+				007DB352A4B5CE0667C5BE75 /* Sources */,
+				30B4D9149F68C09AA9F94F07 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AppleWatchCursorWatch;
+			packageProductDependencies = (
+				19C9095493C74549CB02E041 /* AppleWatchCursorCore */,
+			);
+			productName = AppleWatchCursorWatch;
+			productReference = CFFE75BC7A01B000BF0E236C /* AppleWatchCursorWatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9B59F44E5DC17A809EE5BCF6 /* AppleWatchCursorMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D46C054869750628BEE7AE48 /* Build configuration list for PBXNativeTarget "AppleWatchCursorMac" */;
+			buildPhases = (
+				E264EB08C1C512A45205F172 /* Sources */,
+				DAFD7AD32FD82D5C34E3E74B /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AppleWatchCursorMac;
+			packageProductDependencies = (
+				5FED62A680945B16DFC8C02C /* AppleWatchCursorCore */,
+			);
+			productName = AppleWatchCursorMac;
+			productReference = 4F88DA2E0A9AFCA0BE536BFD /* AppleWatchCursorMac.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E9E0221FB96F973BFFD8C693 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					3123029925EF440705172C10 = {
+						ProvisioningStyle = Automatic;
+					};
+					9B59F44E5DC17A809EE5BCF6 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 53AE8F5D7AF78E0F5BA2156E /* Build configuration list for PBXProject "AppleWatchCursor" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 84B57C3B5828049F31C06EF9;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				5D79759B67A8BF84E473D1FB /* XCLocalSwiftPackageReference "." */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = F941F4E13EC187EF5F92A053 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9B59F44E5DC17A809EE5BCF6 /* AppleWatchCursorMac */,
+				3123029925EF440705172C10 /* AppleWatchCursorWatch */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		007DB352A4B5CE0667C5BE75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF540659CBF1954464804E57 /* AppleWatchCursorWatchApp.swift in Sources */,
+				6E40A5F6FBE14ADA73349E2D /* WatchContentView.swift in Sources */,
+				5008BAE747E0029CC9EAC604 /* WatchLink.swift in Sources */,
+				9BCD44B9503DA9DD67FABD00 /* WatchPilotModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E264EB08C1C512A45205F172 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29B421EE15B3857290083E99 /* AppleWatchCursorMacApp.swift in Sources */,
+				216FD149657079CEB1B21F66 /* AxisCalibrationView.swift in Sources */,
+				6950D94761952A767324403C /* MacContentView.swift in Sources */,
+				07E39B6B43BF0EE931D593E5 /* MacPilotModel.swift in Sources */,
+				79840C898667096014BDB621 /* PointerController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1A07ADE2867838777040D872 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 14;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.6.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		3566343236770765E98D40BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_APP_SANDBOX = NO;
+				INFOPLIST_FILE = "Config/Mac-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.yiheng.wristpilot.mac;
+				PRODUCT_NAME = "Apple-Watch-Cursor";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		6681E378329D6B8901E6255B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Config/Watch-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = dev.yiheng.wristpilot.watch;
+				SDKROOT = watchos;
+				SKIP_INSTALL = NO;
+				TARGETED_DEVICE_FAMILY = 4;
+			};
+			name = Release;
+		};
+		9535E406D8F4AD836535C967 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Config/Watch-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = dev.yiheng.wristpilot.watch;
+				SDKROOT = watchos;
+				SKIP_INSTALL = NO;
+				TARGETED_DEVICE_FAMILY = 4;
+			};
+			name = Debug;
+		};
+		CEA53CD0D36031D59E0014B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 14;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.6.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		F487504BD9BFB5CE6A3CE6A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_APP_SANDBOX = NO;
+				INFOPLIST_FILE = "Config/Mac-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.yiheng.wristpilot.mac;
+				PRODUCT_NAME = "Apple-Watch-Cursor";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		53AE8F5D7AF78E0F5BA2156E /* Build configuration list for PBXProject "AppleWatchCursor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A07ADE2867838777040D872 /* Debug */,
+				CEA53CD0D36031D59E0014B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D46C054869750628BEE7AE48 /* Build configuration list for PBXNativeTarget "AppleWatchCursorMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F487504BD9BFB5CE6A3CE6A4 /* Debug */,
+				3566343236770765E98D40BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E73C7D57FB96F092BE99B327 /* Build configuration list for PBXNativeTarget "AppleWatchCursorWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9535E406D8F4AD836535C967 /* Debug */,
+				6681E378329D6B8901E6255B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		5D79759B67A8BF84E473D1FB /* XCLocalSwiftPackageReference "." */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = .;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		19C9095493C74549CB02E041 /* AppleWatchCursorCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AppleWatchCursorCore;
+		};
+		5FED62A680945B16DFC8C02C /* AppleWatchCursorCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AppleWatchCursorCore;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = E9E0221FB96F973BFFD8C693 /* Project object */;
+}

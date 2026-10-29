@@ -1,0 +1,26 @@
+name: Build and test
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: macos-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Toolchain
+        run: xcodebuild -version
+      - name: Shared logic tests
+        run: swift test
+      - name: Mac compile
+        run: >-
+          xcodebuild -project AppleWatchCursor.xcodeproj -scheme AppleWatchCursorMac
+          -destination 'generic/platform=macOS' -derivedDataPath /tmp/cursor-mac
+          CODE_SIGNING_ALLOWED=NO build
+      - name: Watch compile
+        run: >-
+          xcodebuild -project AppleWatchCursor.xcodeproj -scheme AppleWatchCursorWatch
+          -destination 'generic/platform=watchOS' -derivedDataPath /tmp/cursor-watch
+          CODE_SIGNING_ALLOWED=NO build
