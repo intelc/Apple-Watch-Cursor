@@ -24,7 +24,15 @@ xcodebuild -project AppleWatchCursor.xcodeproj -scheme AppleWatchCursorWatch \
   CODE_SIGNING_ALLOWED=NO build
 ```
 
-Unsigned builds check compilation; they do not establish sensor accuracy or install a Watch app. The replay tool accepts a local recording; run `swift run TapReplay` to see its usage. Do not commit recordings or device diagnostics.
+Expected results are 70 passing tests and `BUILD SUCCEEDED` for each native app. Unsigned builds check compilation; they do not install or launch a Watch app or establish sensor accuracy. No Apple account, signing identity, physical device, XcodeGen or third-party dependency installation is needed for this build-only path. Full Xcode with the watchOS SDK is required; standalone Command Line Tools are insufficient.
+
+The optional replay tool requires a local calibration recording:
+
+```sh
+swift run TapReplay /path/to/your/recording.json
+```
+
+An optional third argument supplies a numeric detector threshold. A recording is not included in the public repository; the core tests use synthetic data and need no private recording. Do not run the replay tool without a recording argument, and do not commit recordings or device diagnostics.
 
 ## Local signed builds
 
@@ -40,7 +48,7 @@ Use Xcode's physical Watch destination to install. If the destination is missing
 
 ## Public developer package
 
-From a clean committed checkout:
+From a clean committed **Git clone** (the release source ZIP has no Git history):
 
 ```sh
 bash scripts/package-preview.sh

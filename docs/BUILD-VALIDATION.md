@@ -1,5 +1,29 @@
 # Verification
 
+## Instructions verified — October 29, 2026
+
+Verification started from the public HTTPS repository in a new temporary directory, with interactive Git authentication and credential helpers disabled. The tested source commit was `edfc152318256e43b022f8fcfc5be25398cfefda` (the `v0.6.0` release). The instruction follow-up changes only documentation.
+
+| Check | Result |
+| --- | --- |
+| Public clone and checked-in Xcode project | Passed; no XcodeGen or third-party dependency installation required |
+| Xcode schemes | `AppleWatchCursorMac` and `AppleWatchCursorWatch` resolved with the local core package |
+| `swift test` in the fresh clone | 70 tests, 0 failures |
+| Documented unsigned Mac build | `BUILD SUCCEEDED`; fresh DerivedData, no signing/provisioning |
+| Documented unsigned physical-target Watch build | `BUILD SUCCEEDED`; fresh DerivedData, no connected device required |
+| Default Mac build with no development team | Passed on the verification host; local signing behavior is separate from Watch device provisioning |
+| `bash scripts/package-preview.sh` from the clean clone | Passed; universal arm64 + x86_64 Mac developer ZIP, tracked-source ZIP and checksum file produced |
+| Anonymous public release downloads | Both ZIPs and `SHA256SUMS.txt` downloaded without a GitHub token; both checksums passed |
+| Downloaded source contents | All 52 tracked files matched the clean release checkout byte for byte |
+| Downloaded Mac app | Extracted signature verification passed; both arm64 and x86_64 slices present |
+| GitHub-hosted CI for the release commit | Passed tests and both unsigned native builds on a fresh hosted runner |
+
+Local environment: Xcode 27.1, Swift 6.4. The unsigned command checks used separate new DerivedData directories instead of reusing prior build products. No installed copy, private sensor recordings or private package dependencies were used to validate compilation/tests.
+
+The guide now includes full-Xcode/SDK preflight commands, signing configuration and unique identifiers before the first device Run, a build-only path with expected results, and the recording argument required by the optional replay tool.
+
+**Scope:** this verifies public access, documented compilation, automated logic tests, release integrity and packaging. It does not prove that a new person can provision a Watch with a different Apple account, grant permissions, or obtain accurate taps on different hardware. That still requires their own signed installation and the [physical-device evaluation](HARDWARE-VALIDATION.md). Earlier Series 10 observations below remain the hardware evidence; they were not repeated during this instruction audit.
+
 ## 0.6.0 developer preview
 
 The shared core has 70 passing tests. The original 0.6.0 native Mac and Watch development builds passed strict signature verification; the Watch app was installed and used on a physical Series 10. The publication rename changes the project/module/UI names while retaining bundle identifiers and runtime behavior. Publication build results are recorded in the GitHub prerelease notes.
