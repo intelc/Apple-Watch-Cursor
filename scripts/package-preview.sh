@@ -21,7 +21,13 @@ app_path="$build_root/DerivedData/Build/Products/Release/Apple-Watch-Cursor.app"
 # Ad hoc signing satisfies local code integrity; it is not Developer ID signing.
 codesign --force --sign - "$app_path"
 codesign --verify --deep --strict "$app_path"
-lipo "$app_path/Contents/MacOS/Apple-Watch-Cursor" -verify_arch arm64 x86_64
+architectures="$(/usr/bin/lipo -archs "$app_path/Contents/MacOS/Apple-Watch-Cursor")"
+for architecture in arm64 x86_64; do
+    if [[ " $architectures " != *" $architecture "* ]]; then
+        echo "Missing required architecture: $architecture" >&2
+        exit 1
+    fi
+done
 
 stage="$build_root/Apple-Watch-Cursor-$version-macOS-universal-dev"
 mkdir -p "$stage"
